@@ -1,0 +1,14 @@
+.header {
+  display: "flex";
+  justify-content: space-between;
+  padding: "20px";
+  background-color: teal;
+  color: white;
+}
+.title {
+  color: fuchsia;
+}
+.logo {
+  text-transform: uppercase;
+  color: blue;
+}

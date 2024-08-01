@@ -1,15 +1,12 @@
-import { Layout } from "./Layout/Layout";
-import { AppBar } from "./AppBar/AppBar";
-import { TaskForm } from "./TaskForm/TaskForm";
-import { TaskList } from "./TaskList/TaskList";
+import Counter from "./Counter/Counter";
 
+// import "./index.css";
 const App = () => {
   return (
-    <Layout>
-      <AppBar />
-      <TaskForm />
-      <TaskList />
-    </Layout>
+    <>
+      <Counter />
+    </>
   );
 };
+
 export default App;

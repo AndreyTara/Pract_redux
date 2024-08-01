@@ -1,0 +1,13 @@
+.title {
+  display: "flex";
+  justify-content: space-between;
+  padding: "20px";
+  background-color: teal;
+  color: white;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
