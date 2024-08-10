@@ -15,13 +15,11 @@ function ContactForm() {
       .max(50, "Name consist from max 20 chars"),
     number: Yup.string()
       .required("This field is required!")
-      .matches(
-        /[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/,
-        "This field is required (1234567)"
-      ),
+      .matches(/^\d{3}-\d{2}-\d{2}$/, "This field is required (123-45-67)"),
   });
   // /^[\+]?3?[\s]?8?[\s]?\(?0\d{2}?\)?[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/,
   // /?[\s.-]\d{3}[\s.-]\d{4}$/,
+  // /^\d{3}-\d{2}-\d{2}$/
 
   const initialValues = {
     name: "",
@@ -33,7 +31,7 @@ function ContactForm() {
   };
 
   return (
-    <div className={css.formWrapper}>
+    <div className={css.wrapForm}>
       <Formik
         validationSchema={registerSchema}
         initialValues={initialValues}

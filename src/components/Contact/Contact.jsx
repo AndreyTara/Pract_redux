@@ -8,7 +8,7 @@ function Contact({ contact }) {
   const dispatch = useDispatch();
 
   return (
-    <div className={css.wrap}>
+    <div className={css.wrapItem}>
       <div className={css.box}>
         <div className={css.item}>
           <FaUser className={css.person} />
