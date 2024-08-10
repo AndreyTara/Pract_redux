@@ -6,15 +6,14 @@
   /* composes: flex; */
   display: flex;
   gap: 20px;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
 .wrapper {
   background-color: #454545;
-  min-height: 50vh;
-  min-width: 25vh;
+  /* min-height: 50vh;
+  min-width: 25vh; */
   display: flex;
   flex-direction: column;
   gap: 20px;

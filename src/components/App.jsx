@@ -1,16 +1,17 @@
 import Counter from "./Counter/Counter";
-// import { StatusFilter } from "./StatusFilter/StatusFilter";
-// import { ContactList } from "./Contact/Contact";
-// import { TaskCounter } from "./TaskCounter/TaskCounter";
+import ContactList from "./ContactList/ContactList";
+import SearchBox from "./SearchBox/SearchBox";
+import ContactForm from "./ContactForm/ContactForm";
 
 // import "./index.css";
+
 const App = () => {
   return (
     <>
       <Counter />
-      {/* <StatusFilter /> */}
-      {/* <ContactList /> */}
-      {/* <TaskCounter /> */}
+      <ContactForm />
+      <ContactList />
+      <SearchBox />
     </>
   );
 };

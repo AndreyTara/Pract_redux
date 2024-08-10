@@ -1,8 +1,13 @@
 import css from "./ContactForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
+import { addContact } from "../../redux/contacts/contactsSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
-function ContactForm({ onAdd }) {
+function ContactForm() {
+  const dispatch = useDispatch();
+
   const registerSchema = Yup.object({
     name: Yup.string()
       .required("This field is required!")
@@ -11,18 +16,19 @@ function ContactForm({ onAdd }) {
     number: Yup.string()
       .required("This field is required!")
       .matches(
-        /^[\+]?3?[\s]?8?[\s]?\(?0\d{2}?\)?[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/,
-        "This field is required (+380123456789!)"
+        /[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/,
+        "This field is required (1234567)"
       ),
   });
   // /^[\+]?3?[\s]?8?[\s]?\(?0\d{2}?\)?[\s]?\d{3}[\s|-]?\d{2}[\s|-]?\d{2}$/,
-  // ?[\s.-]\d{3}[\s.-]\d{4}$
+  // /?[\s.-]\d{3}[\s.-]\d{4}$/,
+
   const initialValues = {
     name: "",
     number: "",
   };
   const handleSubmit = (data, actions) => {
-    onAdd(data);
+    dispatch(addContact({ ...data, id: nanoid() }));
     actions.resetForm();
   };
 
