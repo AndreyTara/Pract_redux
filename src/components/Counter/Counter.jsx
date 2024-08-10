@@ -6,7 +6,13 @@ import {
   decrement,
   reset,
   changeStep,
-} from "../../redux/counter/actions.js";
+} from "../../redux/counter/slice";
+// import {
+//   increment,
+//   // decrement,
+//   // reset,
+//   // changeStep,
+// } from "../../redux/counter/aaa/actions.js";
 
 const Counter = () => {
   const counter = useSelector(selectCounter);
