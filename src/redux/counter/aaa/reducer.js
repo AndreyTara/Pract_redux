@@ -11,6 +11,7 @@ export const counterReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(increment, (state, action) => {
       state.counter += state.step;
+      l;
     })
     .addCase(decrement, (state, action) => {
       state.counter -= state.step;

@@ -1,21 +1,28 @@
+import { useDispatch, useSelector } from "react-redux";
 import css from "./ContactList.module.css";
-// import Contact from "../Contact/Contact";
-// import { nanoid } from "nanoid";
+import Contact from "../Contact/Contact";
+import { selectFilter, selectorContacts } from "../../redux/contacts/selectors";
 
-function ContactList() {
+const ContactList = () => {
+  const contacts = useSelector(selectorContacts);
+  const filter = useSelector(selectFilter);
+
+  const filteredData = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
   return (
     <div className={css.wrap}>
       <ul className={css.ul}>
-        {/* {contacts.map((contact) => {
+        {filteredData.map((contact) => {
           return (
-            <>
-              <Contact />
-            </>
+            <li className={css.wrap} key={contact.id}>
+              <Contact contact={contact} />
+            </li>
           );
-        })} */}
+        })}
       </ul>
     </div>
   );
-}
+};
 
 export default ContactList;

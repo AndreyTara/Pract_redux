@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { counterReducer } from "./counter/slice.js";
+import { contactsReducer } from "./contacts/contactsSlice.js";
+import { filterReducer } from "./contacts/filtersSlice.js";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    contacts: contactsReducer,
+    filter: filterReducer,
+
     // todos: todosReducer,
-    // filter: filterReducer,
     // tasks: tasksReducer,
   },
 });
